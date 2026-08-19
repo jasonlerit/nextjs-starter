@@ -85,7 +85,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - When asked to create or update docs/specs, edit only documentation. Do not implement or commit. Stop for user review.
 - Implement a spec only when explicitly requested. Follow the approved spec and project guidelines, update `docs/progress.md`, run required checks, and stop for user review.
 - Use `docs/progress.md` as the source of truth when asked for current progress or next steps, especially in a new session. Read it first and avoid scanning unrelated files unless it is missing, stale, or insufficient.
-- Never commit unless explicitly requested. When the user requests a commit, stage the relevant changes and commit without asking for separate confirmation.
+- Never commit unless explicitly requested.
 
 ## Commit messages
 
