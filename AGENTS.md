@@ -80,6 +80,13 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - Let `prettier-plugin-tailwindcss` order Tailwind classes using `src/app/globals.css`.
 - Run `pnpm run format` after editing supported files and include formatting changes in the same task.
 
+## Spec workflow
+
+- When asked to create or update docs/specs, edit only documentation. Do not implement or commit. Stop for user review.
+- Implement a spec only when explicitly requested. Follow the approved spec and project guidelines, update `docs/progress.md`, run required checks, and stop for user review.
+- Use `docs/progress.md` as the source of truth when asked for current progress or next steps, especially in a new session. Read it first and avoid scanning unrelated files unless it is missing, stale, or insufficient.
+- Never commit unless explicitly requested.
+
 ## Commit messages
 
 - Use Conventional Commits in the form `<type>(optional-scope): <description>`.
