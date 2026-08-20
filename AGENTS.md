@@ -102,7 +102,10 @@ For small changes within an existing module, follow the surrounding structure an
 - When asked to create or update docs/specs, edit documentation only. Do not implement or commit.
 - Implement a spec only when explicitly requested.
 - When implementing an approved spec, follow it and update `docs/progress.md`.
-- When asked for current progress or next steps, read `docs/progress.md` first.
+- Keep only active work in progress under `## Current`; move or remove items when they are completed or no longer in progress.
+- Use `## Notes` only for important handoff context that does not fit another section; write `None.` when there is none.
+- Before planning, resuming, implementing, or reporting progress, read `docs/progress.md` and inspect the working tree for existing changes.
+- Treat `docs/progress.md` as a concise handoff index. Follow any referenced specifications or files for full details instead of duplicating them there.
 - Never commit unless explicitly requested.
 
 ## Commit Messages

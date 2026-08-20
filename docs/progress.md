@@ -1,5 +1,7 @@
 # Progress
 
+## Status
+
 Not started
 
 ## Phase
@@ -8,7 +10,7 @@ Planning
 
 ## Current
 
-No implementation is currently in progress.
+None.
 
 ## Last completed
 
@@ -24,5 +26,4 @@ None.
 
 ## Notes
 
-- Keep this file current as implementation work progresses.
-- Use it as the primary handoff between sessions.
+None.
