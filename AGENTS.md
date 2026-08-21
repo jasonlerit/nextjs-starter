@@ -100,6 +100,9 @@ For small changes within an existing module, follow the surrounding structure an
 ## Spec Workflow
 
 - When asked to create or update docs/specs, edit documentation only. Do not implement or commit.
+- Treat issue or adjustment details as requirements to review, not automatic authorization to implement.
+- Before changing code, read `docs/progress.md` and relevant specs. If documented behavior must change, update the spec first and wait for explicit implementation approval.
+- Providing requested details alone does not authorize implementation.
 - Implement a spec only when explicitly requested.
 - When implementing an approved spec, follow it and update `docs/progress.md`.
 - Keep only active work in progress under `## Current`; move or remove items when they are completed or no longer in progress.
