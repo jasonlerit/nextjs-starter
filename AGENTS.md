@@ -105,6 +105,10 @@ For small changes within an existing module, follow the surrounding structure an
 - Before changing code, read `docs/progress.md` and relevant specs. If documented behavior must change, update the spec first and wait for explicit implementation approval.
 - Providing requested details alone does not authorize implementation.
 - Implement a spec only when explicitly requested.
+- Authorization applies only to the specific task identified when it is given and expires when that task is completed.
+- Resolve “next spec” or “next task” once; prior approval does not apply to whichever item becomes next afterward.
+- Questions such as “what’s next?” request information only. Report the next item and wait for explicit implementation approval.
+- `docs/progress.md` records status and recommendations; it never authorizes implementation.
 - When implementing an approved spec, follow it and update `docs/progress.md`.
 - Keep only active work in progress under `## Current`; move or remove items when they are completed or no longer in progress.
 - Use `## Notes` only for important handoff context that does not fit another section; write `None.` when there is none.
