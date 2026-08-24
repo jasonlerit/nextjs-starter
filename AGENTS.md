@@ -115,8 +115,11 @@ For small changes within an existing module, follow the surrounding structure an
 - Questions such as “what’s next?” request information only. Report the next item and wait for explicit implementation approval.
 - `docs/progress.md` records status and recommendations; it never authorizes implementation.
 - When implementing an approved spec, follow it and update `docs/progress.md`.
+- Preserve the canonical section order in `docs/progress.md`: `Status`, `Phase`, `Current`, `Last completed`, `Next`, `Blockers`, and `Notes`.
+- Each canonical section must appear exactly once. Update existing sections in place, and consolidate any duplicates instead of appending another section.
 - Keep only active work in progress under `## Current`; move or remove items when they are completed or no longer in progress.
-- Use `## Notes` only for important handoff context that does not fit another section; write `None.` when there is none.
+- Keep `## Notes` as the final section. Use it only for important handoff context that does not fit another section; write `None.` when there is none.
+- After editing `docs/progress.md`, check for missing, duplicated, reordered, or unknown sections.
 - Before planning, resuming, implementing, or reporting progress, read `docs/progress.md` and inspect the working tree for existing changes.
 - Treat `docs/progress.md` as a concise handoff index. Follow any referenced specifications or files for full details instead of duplicating them there.
 
