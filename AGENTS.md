@@ -46,7 +46,10 @@ For small changes within an existing module, follow the surrounding structure an
 - Use Server Components for initial server-side data fetching when client-side caching, refetching, or synchronization is unnecessary.
 - Use TanStack Query for client-side data fetching, caching, synchronization, and mutation state.
 - Use the shared `getQueryClient` from `src/lib/react-query.ts`; do not create ad hoc `QueryClient` instances.
-- Use API routes and the shared HTTP service layer for client-side requests. Use Axios services when Axios is installed and configured for the feature.
+- Use API routes and domain-specific modules under `src/services/` for client-side requests; service functions may use `fetch` directly or an existing configured HTTP client such as Axios.
+- Do not create generic HTTP wrappers such as `services/api.ts`, `apiFetch`, `http.ts`, or `request.ts`.
+- Components and TanStack Query hooks must delegate HTTP requests to domain service functions instead of calling `fetch` or an HTTP client directly.
+- Domain service functions must have typed parameters and typed return values. Reuse existing domain types where available; runtime schema parsing is not required by this rule.
 - Prefer TanStack Query mutations for client-driven mutations that need loading, error, cache invalidation, or optimistic-update behavior.
 - Use Server Actions only when they clearly simplify a server-only or form-driven workflow and do not bypass established API/service conventions without a reason.
 - Invalidate or update affected queries after successful TanStack Query mutations.

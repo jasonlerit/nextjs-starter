@@ -163,7 +163,7 @@ src/
 | `hooks/stores/`              | Reusable Zustand stores                                |
 | `hooks/`                     | General reusable React hooks                           |
 | `lib/`                       | Configured clients, SDKs, and third-party integrations |
-| `services/`                  | Client-side HTTP/API requests using Axios              |
+| `services/`                  | Domain-specific client-side HTTP/API requests          |
 
 ### Placement Rules
 
@@ -185,7 +185,8 @@ src/
 - Keep reusable Zustand stores in `hooks/stores/`.
 - Keep general reusable hooks directly under `hooks/`.
 - Keep configured clients, SDKs, and third-party integrations in `lib/`.
-- Keep client-side HTTP requests in the root `services/` directory.
+- Keep client-side HTTP requests in domain-specific modules under the root `services/` directory, such as `auth.service.ts` or `user/me.service.ts`; do not add generic request modules.
+- Keep shared Axios configuration in `lib/axios.ts` only when Axios is installed and shared configuration is needed.
 - Keep server-side business logic in `app/(server)/services/`.
 - Keep database access logic in `app/(server)/repositories/`.
 - Prefer colocating page-specific code with its page before promoting it to a shared directory.
