@@ -50,6 +50,9 @@ For small changes within an existing module, follow the surrounding structure an
 - Do not create generic HTTP wrappers such as `services/api.ts`, `apiFetch`, `http.ts`, or `request.ts`.
 - Components and TanStack Query hooks must delegate HTTP requests to domain service functions instead of calling `fetch` or an HTTP client directly.
 - Domain service functions must have typed parameters and typed return values. Reuse existing domain types where available; runtime schema parsing is not required by this rule.
+- Define API request and response DTOs shared by server and client under domain-specific files in `src/common/types/`; both API producers and client service consumers must use these canonical contracts instead of declaring duplicate transport types.
+- Keep types used by only one implementation colocated with that implementation; do not move every local helper or internal type into `src/common/types/`.
+- Shared response-parsing and API-error helpers may parse a `Response` or construct an error, but they must not issue requests, own endpoint paths, or become generic request wrappers. Domain services remain responsible for `fetch`, URLs, query parameters, payload serialization, and protocol headers.
 - Prefer TanStack Query mutations for client-driven mutations that need loading, error, cache invalidation, or optimistic-update behavior.
 - Use Server Actions only when they clearly simplify a server-only or form-driven workflow and do not bypass established API/service conventions without a reason.
 - Invalidate or update affected queries after successful TanStack Query mutations.

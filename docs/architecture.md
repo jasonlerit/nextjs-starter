@@ -177,6 +177,8 @@ src/
 - Move components to `components/shared/` when they are reused across pages or features.
 - Keep shadcn/ui components in `components/ui/`.
 - Keep shared constants, schemas, types, and utilities under `common/`.
+- Keep API request and response DTOs shared by server and client in domain-specific files under `common/types/`; API producers and client service consumers must use these canonical transport contracts rather than duplicate them.
+- Keep implementation-only types colocated with their owning module instead of promoting every local type into `common/types/`.
 - Keep Drizzle schemas in `db/schemas/`.
 - Re-export Drizzle schemas through `db/schemas/index.ts`.
 - Keep generated Drizzle migrations in `db/migrations/`.
@@ -186,6 +188,7 @@ src/
 - Keep general reusable hooks directly under `hooks/`.
 - Keep configured clients, SDKs, and third-party integrations in `lib/`.
 - Keep client-side HTTP requests in domain-specific modules under the root `services/` directory, such as `auth.service.ts` or `user/me.service.ts`; do not add generic request modules.
+- Shared response-parsing and API-error helpers may operate on a `Response`, but they must not issue requests or own endpoint paths; each domain service remains responsible for its request URL, query parameters, payload serialization, and protocol headers.
 - Keep shared Axios configuration in `lib/axios.ts` only when Axios is installed and shared configuration is needed.
 - Keep server-side business logic in `app/(server)/services/`.
 - Keep database access logic in `app/(server)/repositories/`.
