@@ -72,7 +72,9 @@ For small changes within an existing module, follow the surrounding structure an
 - Import the validated `env` object; do not access named `process.env` variables elsewhere.
 - Add required variables to `.env.example` with safe placeholder values.
 - Group `.env.example` variables by concern. When adding variables for a new service or feature, create a separate commented section with blank lines around it.
-- Never commit real secrets or expose server-only values with `NEXT_PUBLIC_`.
+- Never expose server-only values with `NEXT_PUBLIC_`.
+- You may read `.env` to confirm which variables exist, but never echo or log secret values, and never copy real values into code, tests, docs, or commit messages. Treat `.env.example` as the canonical reference for names and placeholders.
+- Do not write to `.env` or change existing values without explicit authorization.
 
 ## Database
 
@@ -114,7 +116,6 @@ For small changes within an existing module, follow the surrounding structure an
 - Use `## Notes` only for important handoff context that does not fit another section; write `None.` when there is none.
 - Before planning, resuming, implementing, or reporting progress, read `docs/progress.md` and inspect the working tree for existing changes.
 - Treat `docs/progress.md` as a concise handoff index. Follow any referenced specifications or files for full details instead of duplicating them there.
-- Never commit unless explicitly requested.
 
 ## Commit Messages
 
@@ -123,8 +124,15 @@ For small changes within an existing module, follow the surrounding structure an
 - Use lowercase imperative descriptions without a trailing period.
 - Mark breaking changes with `!` and a `BREAKING CHANGE:` footer when needed.
 - Review the staged diff before creating a commit.
+- Never push, force-push, rebase, amend, or create/delete branches or stashes without explicit request.
 
 Example: `feat(auth): add password reset flow`
+
+## Testing
+
+- Use Vitest as the test runner.
+- Colocate tests as `*.test.ts` next to the files they cover.
+- Do not install or configure any other test framework without authorization.
 
 ## Verification
 
