@@ -77,7 +77,7 @@ For small changes within an existing module, follow the surrounding structure an
 - Define and validate environment variables in `src/common/env.ts` with Zod.
 - Import the validated `env` object; do not access named `process.env` variables elsewhere.
 - Add required variables to `.env.example` with safe placeholder values.
-- Group `.env.example` variables by concern. When adding variables for a new service or feature, create a separate commented section with blank lines around it.
+- Group `.env.example` variables by concern. When adding variables for a new service or feature, create a separate commented section. Use exactly one blank line between sections, no blank line between a section comment and its variables, and no consecutive blank lines.
 - Never expose server-only values with `NEXT_PUBLIC_`.
 - You may read `.env` to confirm which variables exist, but never echo or log secret values, and never copy real values into code, tests, docs, or commit messages. Treat `.env.example` as the canonical reference for names and placeholders.
 - Do not write to `.env` or change existing values without explicit authorization.
