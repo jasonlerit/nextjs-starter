@@ -18,7 +18,15 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - Do not refactor unrelated code.
 - Do not add a dependency when the project already provides an equivalent solution.
 - Prefer the `@/*` alias for imports from `src`.
-- Never commit unless explicitly requested.
+
+## Approval and Commit Workflow
+
+- Never create a commit without explicit, scope-limited authorization.
+- A commit request authorizes only the files and checkpoint explicitly identified by the user.
+- After documentation review, "commit & proceed" means commit the reviewed documentation/specification changes only, then proceed with implementation while leaving implementation changes uncommitted.
+- Never commit implementation code, tests, configuration, migrations, or generated files without a separate explicit request to commit those implementation changes.
+- After implementation, run the required checks, report the implementation diff and verification results, then stop and wait for explicit commit approval.
+- Do not include unrelated or unapproved changes in a commit, even if they are staged.
 
 ## Architecture
 
@@ -112,7 +120,7 @@ For small changes within an existing module, follow the surrounding structure an
 - Treat issue or adjustment details as requirements to review, not automatic authorization to implement.
 - Before changing code, read `docs/progress.md` and relevant specs. If documented behavior must change, update the spec first and wait for explicit implementation approval.
 - Providing requested details alone does not authorize implementation.
-- Implement a spec only when explicitly requested.
+- Implement a spec only when explicitly requested; implementation approval does not authorize committing the implementation.
 - Authorization applies only to the specific task identified when it is given and expires when that task is completed.
 - Resolve “next spec” or “next task” once; prior approval does not apply to whichever item becomes next afterward.
 - Questions such as “what’s next?” request information only. Report the next item and wait for explicit implementation approval.
