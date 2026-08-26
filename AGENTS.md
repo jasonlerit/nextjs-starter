@@ -94,6 +94,7 @@ For small changes within an existing module, follow the surrounding structure an
 
 - Use Drizzle ORM with PostgreSQL.
 - Keep schemas in `src/db/schemas`, export them from `src/db/schemas/index.ts`, and keep migrations in `src/db/migrations`.
+- Group Drizzle tables by cohesive business domain in `src/db/schemas/<domain>.schema.ts`; do not create one global schema file. Keep tightly coupled infrastructure tables, such as Better Auth's tables, together when they share an integration contract.
 - Treat everything in `src/db/migrations`, including SQL migrations and `meta/` files, as generated artifacts. Do not create, edit, rename, or delete these files manually; make changes through the Drizzle schemas and `pnpm run db:generate`.
 - Use camelCase in TypeScript and snake_case in PostgreSQL.
 - Run `pnpm run db:generate` after schema changes.
