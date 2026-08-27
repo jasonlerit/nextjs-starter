@@ -10,6 +10,7 @@
 | UI              | shadcn/ui      | Reusable UI components                                 |
 | Icons           | Lucide React   | Icon library                                           |
 | Data Fetching   | TanStack Query | Data fetching, caching, synchronization, and mutations |
+| Forms           | TanStack Form  | Form state management and validation                   |
 | Validation      | Zod            | Schema validation and type inference                   |
 | ORM             | Drizzle ORM    | Type-safe database access and queries                  |
 | Database        | PostgreSQL     | Primary relational database                            |
@@ -23,7 +24,6 @@ These technologies are approved choices when a feature requires them, but they a
 
 | Category           | Technology       | Purpose                                   |
 | ------------------ | ---------------- | ----------------------------------------- |
-| Forms              | TanStack Form    | Form state management and validation      |
 | Tables             | TanStack Table   | Headless tables and data grids            |
 | Virtualization     | TanStack Virtual | Virtualized lists and tables              |
 | State Management   | Zustand          | Lightweight application state management  |
